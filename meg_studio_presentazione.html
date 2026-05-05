@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>meg.studio — Per la montagna che costruisce il futuro</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #031C18;
+  --ottanio: #005C52;
+  --ottanio-mid: #007A6E;
+  --ottanio-light: #E0F4F1;
+  --lime: #C8FF00;
+  --lime-dark: #90BB00;
+  --lime-light: #EFFFB0;
+  --paper: #F2F9F8;
+  --stone: #8CBFB8;
+  --stone-light: #D8F0EC;
+  --slate: #0A2820;
+  --mist: #4A8078;
+  --r: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 20px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(240,252,250,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.nav-logo {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px; font-weight: 500;
+  color: var(--ink); letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--ottanio); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 12px; font-weight: 500; text-decoration: none;
+  color: var(--mist); text-transform: uppercase; letter-spacing: 0.08em;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 12px; font-weight: 600; padding: 9px 20px;
+  border-radius: 40px; background: var(--ink); color: var(--lime);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: background .2s, transform .15s;
+}
+.nav-cta:hover { background: var(--ottanio); transform: translateY(-1px); }
+
+/* SECTIONS */
+section { min-height: 100vh; padding: 0; }
+
+/* ── 1. HERO ───────────────────────────────────────────────────────────── */
+#hero {
+  background: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.hero-left {
+  padding: 140px 64px 80px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; z-index: 2;
+}
+.hero-tag {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--lime); letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1px solid var(--lime); display: inline-block;
+  padding: 5px 12px; border-radius: 20px; margin-bottom: 48px; width: fit-content;
+}
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 900; line-height: 1.05;
+  color: #fff; letter-spacing: -1.5px;
+}
+.hero-h1 em { font-style: italic; color: var(--stone); }
+.hero-sub {
+  font-size: 16px; font-weight: 300; color: var(--stone);
+  line-height: 1.7; margin-top: 28px; max-width: 380px;
+}
+.hero-bottom {
+  display: flex; align-items: center; gap: 24px; margin-top: 60px;
+}
+.hero-btn {
+  font-size: 13px; font-weight: 600; padding: 14px 28px;
+  border-radius: 40px; background: var(--lime); color: var(--ink);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: background .2s, transform .15s;
+}
+.hero-btn:hover { background: var(--lime-dark); color: #fff; transform: translateY(-2px); }
+.hero-scroll {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--mist); letter-spacing: 0.1em;
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-right {
+  position: relative; overflow: hidden;
+}
+.topo-svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0.18;
+}
+.hero-right-content {
+  position: relative; z-index: 2;
+  height: 100%; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 80px 64px 80px 48px;
+}
+.hero-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+}
+.stat-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px 24px;
+}
+.stat-box:first-child { grid-column: 1 / -1; }
+.stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px; font-weight: 700; color: #fff;
+  line-height: 1;
+}
+.stat-n span { color: var(--lime); }
+.stat-l {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--stone); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-top: 6px;
+}
+
+/* ── 2. PROBLEMA ──────────────────────────────────────────────────────── */
+#problema {
+  background: var(--paper);
+  padding: 120px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.sec-label {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--mist); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.sec-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px;
+}
+.sec-h2 em { font-style: italic; color: var(--ottanio); }
+.sec-lead {
+  font-size: 17px; font-weight: 300; color: #2A4A44;
+  line-height: 1.75; margin-top: 24px;
+}
+.problema-cards { display: flex; flex-direction: column; gap: 16px; }
+.problema-card {
+  border: 1px solid var(--stone-light);
+  border-radius: var(--r);
+  padding: 22px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+  background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.problema-card:hover {
+  border-color: var(--ottanio);
+  box-shadow: 0 4px 20px rgba(0,92,82,0.12);
+}
+.pc-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--ottanio-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.pc-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.pc-body { font-size: 13px; color: var(--mist); line-height: 1.5; }
+
+/* ── 3. CHI SIAMO ────────────────────────────────────────────────────── */
+#chisiamo {
+  background: var(--ink);
+  padding: 120px 64px;
+  position: relative; overflow: hidden;
+}
+.cs-top { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
+.cs-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -1px;
+}
+.cs-h2 em { font-style: italic; color: var(--stone); }
+.cs-body { font-size: 16px; font-weight: 300; color: var(--stone); line-height: 1.75; }
+.cs-body strong { color: #fff; font-weight: 500; }
+.cs-team { margin-top: 48px; }
+.cs-team-label {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--mist); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 16px; border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+}
+.cs-founders { display: flex; gap: 32px; }
+.founder { display: flex; flex-direction: column; gap: 2px; }
+.founder-name { font-size: 15px; font-weight: 600; color: #fff; }
+.founder-role { font-size: 12px; color: var(--mist); }
+.cs-numbers {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r); overflow: hidden;
+  margin-top: 60px;
+}
+.cs-num-box {
+  background: var(--slate);
+  padding: 32px 28px;
+}
+.cs-num-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px; font-weight: 700; color: #fff; line-height: 1;
+}
+.cs-num-n sup { font-size: 24px; color: var(--lime); }
+.cs-num-l {
+  font-size: 12px; color: var(--mist);
+  margin-top: 6px; line-height: 1.4;
+}
+.cs-strip {
+  margin-top: 80px; padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.cs-tag {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--stone); letter-spacing: 0.06em;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 14px; border-radius: 20px;
+}
+
+/* ── 4. PERCHÉ NOI ───────────────────────────────────────────────────── */
+#perche {
+  padding: 120px 64px;
+  background: var(--stone-light);
+}
+.perche-head { max-width: 700px; margin-bottom: 72px; }
+.perche-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.perche-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 32px;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative; overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.perche-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,92,82,0.12); }
+.perche-card.accent { background: var(--ottanio); color: #fff; }
+.perche-n {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--mist); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.perche-card.accent .perche-n { color: var(--lime); }
+.perche-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; line-height: 1.25;
+  margin-bottom: 12px;
+}
+.perche-card.accent .perche-title { color: #fff; }
+.perche-body { font-size: 14px; color: var(--mist); line-height: 1.65; }
+.perche-card.accent .perche-body { color: rgba(255,255,255,0.75); }
+.perche-corner {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(200,255,0,0.08);
+}
+.perche-card.accent .perche-corner { background: rgba(200,255,0,0.12); }
+
+/* ── 5. PROGETTI ─────────────────────────────────────────────────────── */
+#progetti {
+  padding: 120px 64px;
+  background: var(--ink);
+}
+.proj-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; }
+.proj-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -1px;
+}
+.proj-h2 em { font-style: italic; color: var(--stone); }
+.proj-link {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--lime); letter-spacing: 0.08em; text-decoration: none;
+  border-bottom: 1px solid var(--lime); padding-bottom: 2px;
+}
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 16px;
+}
+.proj-card {
+  border-radius: 10px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--slate);
+  display: flex; flex-direction: column;
+  transition: transform .2s;
+}
+.proj-card:hover { transform: translateY(-4px); }
+.proj-img {
+  width: 100%; aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #1A2840, #2A3850);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.proj-card:first-child .proj-img { aspect-ratio: 16/9; }
+.proj-img-topo {
+  position: absolute; inset: 0;
+  opacity: 0.3;
+}
+.proj-img-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4); text-transform: uppercase;
+  z-index: 2; position: relative;
+}
+.proj-body { padding: 20px; flex: 1; }
+.proj-tag {
+  font-family: 'DM Mono', monospace; font-size: 9px;
+  color: var(--lime); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 8px; display: block;
+}
+.proj-name { font-size: 15px; font-weight: 600; color: #fff; line-height: 1.3; }
+.proj-desc { font-size: 12px; color: var(--mist); margin-top: 6px; line-height: 1.5; }
+.proj-meta {
+  display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap;
+}
+.proj-pill {
+  font-size: 10px; padding: 3px 9px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--stone); letter-spacing: 0.04em;
+}
+
+/* ── 6. SERVIZI ──────────────────────────────────────────────────────── */
+#servizi {
+  padding: 120px 64px;
+  background: var(--paper);
+}
+.serv-top { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; margin-bottom: 72px; }
+.serv-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px;
+}
+.serv-h2 em { font-style: italic; color: var(--ottanio); }
+.serv-lead {
+  font-size: 16px; font-weight: 300; color: #2A4840; line-height: 1.75;
+}
+.serv-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--stone-light);
+  border: 1px solid var(--stone-light);
+  border-radius: 12px; overflow: hidden;
+}
+.serv-cell {
+  background: #fff; padding: 32px 24px;
+  transition: background .2s;
+}
+.serv-cell:hover { background: var(--ottanio-light); }
+.serv-icon {
+  font-size: 28px; margin-bottom: 16px; display: block;
+}
+.serv-title { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+.serv-body { font-size: 13px; color: var(--mist); line-height: 1.6; }
+.serv-tags { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.serv-tag-item {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--ottanio); letter-spacing: 0.06em;
+}
+
+/* ── 7. PERCHÉ LA MONTAGNA ───────────────────────────────────────────── */
+#montagna {
+  background: linear-gradient(180deg, var(--slate) 0%, var(--ink) 100%);
+  padding: 120px 64px;
+  position: relative; overflow: hidden;
+}
+.mtn-topo {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 60%; opacity: 0.06; pointer-events: none;
+}
+.mtn-content { position: relative; z-index: 2; }
+.mtn-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 900; color: #fff; line-height: 1.05;
+  letter-spacing: -2px; max-width: 800px;
+}
+.mtn-h2 em { font-style: italic; color: var(--stone); }
+.mtn-body {
+  font-size: 17px; font-weight: 300; color: var(--stone);
+  line-height: 1.75; max-width: 560px; margin-top: 32px;
+}
+.mtn-pills {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 48px;
+}
+.mtn-pill {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--lime); letter-spacing: 0.06em;
+  border: 1px solid rgba(200,255,0,0.3);
+  padding: 8px 16px; border-radius: 20px;
+  background: rgba(200,255,0,0.05);
+}
+.mtn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 72px; }
+.mtn-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 28px 24px;
+  transition: background .2s;
+}
+.mtn-card:hover { background: rgba(255,255,255,0.07); }
+.mtn-card-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 700; color: var(--lime);
+  line-height: 1;
+}
+.mtn-card-l { font-size: 13px; color: var(--stone); margin-top: 8px; line-height: 1.5; }
+.mtn-card-l strong { color: #fff; font-weight: 500; }
+
+/* ── 8. CTA ──────────────────────────────────────────────────────────── */
+#cta {
+  background: var(--ottanio);
+  padding: 120px 64px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.cta-bg {
+  position: absolute; inset: 0; opacity: 0.08; pointer-events: none;
+}
+.cta-content { position: relative; z-index: 2; }
+.cta-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900; color: #fff; line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+.cta-h2 em { font-style: italic; color: var(--lime); }
+.cta-body {
+  font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.72);
+  line-height: 1.7; margin-top: 24px;
+}
+.cta-right { position: relative; z-index: 2; }
+.cta-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(200,255,0,0.25);
+  border-radius: 16px; padding: 40px 36px;
+  backdrop-filter: blur(8px);
+}
+.cta-card-label {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--lime); letter-spacing: 0.12em;
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.cta-contact-row {
+  display: flex; flex-direction: column; gap: 14px;
+}
+.cta-contact-item { display: flex; gap: 12px; align-items: flex-start; }
+.cta-contact-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: rgba(200,255,0,0.15); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.cta-contact-label {
+  font-size: 10px; color: rgba(255,255,255,0.45);
+  font-family: 'DM Mono', monospace; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 2px;
+}
+.cta-contact-val { font-size: 14px; font-weight: 500; color: #fff; }
+.cta-btn {
+  display: block; text-align: center;
+  margin-top: 28px; padding: 16px;
+  background: var(--lime); color: var(--ink);
+  font-weight: 700; font-size: 14px; letter-spacing: 0.04em;
+  border-radius: 40px; text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+/* FOOTER */
+footer {
+  background: var(--ink); padding: 32px 64px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo {
+  font-family: 'DM Mono', monospace; font-size: 13px;
+  color: var(--stone); font-weight: 500;
+}
+.footer-logo span { color: var(--lime); }
+.footer-text { font-size: 11px; color: var(--mist); }
+.footer-site { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--lime); text-decoration: none; }
+
+/* ANIMATIONS */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media(max-width:900px){
+  nav .nav-links { display: none; }
+  #hero, #problema, #chisiamo .cs-top, #servizi .serv-top, #cta { grid-template-columns: 1fr; }
+  section { padding: 80px 24px; }
+  .hero-left { padding: 100px 24px 60px; }
+  .hero-right-content { padding: 40px 24px; }
+  .perche-grid, .mtn-grid { grid-template-columns: 1fr; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .serv-grid { grid-template-columns: 1fr 1fr; }
+  nav { padding: 16px 24px; }
+  footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  #problema, #perche, #progetti, #servizi, #montagna, #cta { padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">meg<span>.</span>studio</div>
+  <div class="nav-links">
+    <a href="#problema">Il contesto</a>
+    <a href="#chisiamo">Chi siamo</a>
+    <a href="#progetti">Progetti</a>
+    <a href="#servizi">Servizi</a>
+  </div>
+  <a href="#cta" class="nav-cta">Parliamone →</a>
+</nav>
+
+<!-- ── 1. HERO ── -->
+<section id="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-tag">Per le stazioni appaltanti montane</div>
+      <h1 class="hero-h1">
+        Progettiamo<br>la montagna<br>che vuole<br><em>crescere.</em>
+      </h1>
+      <p class="hero-sub">
+        Architettura e ingegneria integrate per le comunità e le unioni montane di Friuli, Veneto, Lombardia e Emilia Romagna. Un solo interlocutore, zero lacune progettuali.
+      </p>
+    </div>
+    <div class="hero-bottom">
+      <a href="#problema" class="hero-btn">Scopri il nostro approccio</a>
+      <span class="hero-scroll">↓ Scorri</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Topographic lines SVG -->
+    <svg class="topo-svg" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#8899AA" stroke-width="0.8">
+        <ellipse cx="300" cy="500" rx="550" ry="180"/>
+        <ellipse cx="300" cy="490" rx="510" ry="160"/>
+        <ellipse cx="300" cy="480" rx="470" ry="140"/>
+        <ellipse cx="300" cy="468" rx="430" ry="122"/>
+        <ellipse cx="300" cy="455" rx="390" ry="105"/>
+        <ellipse cx="300" cy="442" rx="350" ry="90"/>
+        <ellipse cx="300" cy="428" rx="310" ry="76"/>
+        <ellipse cx="300" cy="413" rx="270" ry="63"/>
+        <ellipse cx="300" cy="398" rx="230" ry="52"/>
+        <ellipse cx="300" cy="382" rx="192" ry="42"/>
+        <ellipse cx="300" cy="365" rx="155" ry="33"/>
+        <ellipse cx="300" cy="348" rx="120" ry="25"/>
+        <ellipse cx="300" cy="330" rx="88" ry="18"/>
+        <ellipse cx="300" cy="314" rx="60" ry="12"/>
+        <ellipse cx="300" cy="300" rx="36" ry="7"/>
+        <ellipse cx="300" cy="290" rx="16" ry="3"/>
+        <!-- second peak -->
+        <ellipse cx="80" cy="620" rx="160" ry="60"/>
+        <ellipse cx="80" cy="612" rx="135" ry="50"/>
+        <ellipse cx="80" cy="604" rx="112" ry="40"/>
+        <ellipse cx="80" cy="596" rx="90" ry="31"/>
+        <ellipse cx="80" cy="588" rx="70" ry="23"/>
+        <ellipse cx="80" cy="580" rx="52" ry="16"/>
+        <ellipse cx="80" cy="574" rx="36" ry="10"/>
+        <!-- third peak -->
+        <ellipse cx="520" cy="680" rx="140" ry="55"/>
+        <ellipse cx="520" cy="672" rx="115" ry="44"/>
+        <ellipse cx="520" cy="664" rx="92" ry="34"/>
+        <ellipse cx="520" cy="656" rx="70" ry="25"/>
+        <ellipse cx="520" cy="648" rx="50" ry="17"/>
+        <ellipse cx="520" cy="642" rx="32" ry="10"/>
+      </g>
+      <!-- Altitude markers -->
+      <text x="295" y="282" fill="#6680A0" font-family="monospace" font-size="7" text-anchor="middle">2847 m</text>
+      <text x="78" y="568" fill="#6680A0" font-family="monospace" font-size="6" text-anchor="middle">1920 m</text>
+      <text x="518" y="636" fill="#6680A0" font-family="monospace" font-size="6" text-anchor="middle">2104 m</text>
+    </svg>
+    <div class="hero-right-content">
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-n">58<span>+</span></div>
+          <div class="stat-l">Stazioni appaltanti montane in FVG, Veneto, Lombardia, Emilia Romagna</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n">25<span>+</span></div>
+          <div class="stat-l">Professionisti meg.studio</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n">2017</div>
+          <div class="stat-l">Anno di fondazione</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. IL PROBLEMA ── -->
+<section id="problema">
+  <div class="reveal">
+    <div class="sec-label">01 — Il contesto</div>
+    <h2 class="sec-h2">Le sfide che<br>voi conoscete<br><em>bene.</em></h2>
+    <p class="sec-lead">
+      Le stazioni appaltanti montane operano in condizioni uniche. Organici ridotti, territori complessi, fondi PNRR con scadenze stringenti. Servono partner capaci di rispondere con rapidità e completezza.
+    </p>
+  </div>
+  <div class="problema-cards reveal">
+    <div class="problema-card">
+      <div class="pc-icon">🏗</div>
+      <div>
+        <div class="pc-title">Organici tecnici limitati</div>
+        <div class="pc-body">Molte unioni montane gestiscono appalti con pochissimi tecnici interni. La progettazione esterna non è un costo — è una necessità strutturale.</div>
+      </div>
+    </div>
+    <div class="problema-card">
+      <div class="pc-icon">⏱</div>
+      <div>
+        <div class="pc-title">Scadenze PNRR e Green Community</div>
+        <div class="pc-body">I fondi europei impongono tempi rigidi. Serve un progettista che conosca CAM, DNSH e BIM e possa produrre documentazione compliant senza rallentamenti.</div>
+      </div>
+    </div>
+    <div class="problema-card">
+      <div class="pc-icon">🏔</div>
+      <div>
+        <div class="pc-title">Complessità territoriale</div>
+        <div class="pc-body">Rischio idrogeologico, vincoli paesaggistici, accessibilità difficile: ogni progetto in montagna richiede competenze multidisciplinari che non si improvvisano.</div>
+      </div>
+    </div>
+    <div class="problema-card">
+      <div class="pc-icon">♻️</div>
+      <div>
+        <div class="pc-title">Sostenibilità come obbligo</div>
+        <div class="pc-body">Gli enti montani sono i custodi di ecosistemi unici. Ogni intervento pubblico deve rispettare standard ambientali stringenti — e dimostrarli formalmente ai finanziatori.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. CHI SIAMO ── -->
+<section id="chisiamo">
+  <div class="cs-top reveal">
+    <div>
+      <div class="sec-label" style="color:var(--mist)">02 — Chi siamo</div>
+      <h2 class="cs-h2">Architettura<br>e ingegneria.<br><em>Una voce sola.</em></h2>
+      <div class="cs-team" style="margin-top:36px">
+        <div class="cs-team-label">Fondatori</div>
+        <div class="cs-founders">
+          <div class="founder">
+            <span class="founder-name">Luciano Marinello</span>
+            <span class="founder-role">Co-fondatore — Direzione</span>
+          </div>
+          <div class="founder">
+            <span class="founder-name">Martina Gareggio</span>
+            <span class="founder-role">Co-fondatrice — Direzione</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="cs-body">
+        Dal 2017 progettiamo soluzioni integrate per il settore pubblico e privato. La nostra forza è la capacità di <strong>integrare architettura, ingegneria, BIM e sostenibilità in un unico processo</strong> fluido, controllato da un team multidisciplinare di 25 professionisti.<br><br>
+        Non siamo uno studio che firma documenti. Siamo il partner che <strong>costruisce il progetto insieme a voi</strong>, dalla fattibilità al cantiere, rispondendo a ogni fase del codice appalti.
+      </p>
+      <div class="cs-numbers">
+        <div class="cs-num-box">
+          <div class="cs-num-n">25<sup>+</sup></div>
+          <div class="cs-num-l">Professionisti: architetti, ingegneri, geometri, progettisti BIM</div>
+        </div>
+        <div class="cs-num-box">
+          <div class="cs-num-n">8<sup>+</sup></div>
+          <div class="cs-num-l">Anni di attività in appalti pubblici</div>
+        </div>
+        <div class="cs-num-box">
+          <div class="cs-num-n">1</div>
+          <div class="cs-num-l">Interlocutore per l'intero processo progettuale</div>
+        </div>
+        <div class="cs-num-box">
+          <div class="cs-num-n">BIM</div>
+          <div class="cs-num-l">Manager certificato in organico — conformità D.Lgs. 36/2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cs-strip reveal">
+    <span class="cs-tag">Progettazione architettonica</span>
+    <span class="cs-tag">Ingegneria civile</span>
+    <span class="cs-tag">BIM Manager certificato</span>
+    <span class="cs-tag">Sostenibilità Envision</span>
+    <span class="cs-tag">Criteri Ambientali Minimi</span>
+    <span class="cs-tag">DNSH compliance</span>
+    <span class="cs-tag">nZEB</span>
+    <span class="cs-tag">Partenariato Pubblico-Privato</span>
+    <span class="cs-tag">Sicurezza cantieri</span>
+    <span class="cs-tag">Autodesk Revit</span>
+    <span class="cs-tag">Sierrasoft Roads</span>
+    <span class="cs-tag">D.Lgs. 36/2023</span>
+  </div>
+</section>
+
+<!-- ── 4. PERCHÉ NOI ── -->
+<section id="perche">
+  <div class="perche-head reveal">
+    <div class="sec-label">03 — Il nostro vantaggio</div>
+    <h2 class="sec-h2">Perché meg.studio<br>per la <em>montagna.</em></h2>
+  </div>
+  <div class="perche-grid reveal">
+    <div class="perche-card accent">
+      <div class="perche-n">01</div>
+      <div class="perche-title">Un solo studio, zero buchi progettuali</div>
+      <div class="perche-body">Architettura, strutture, impianti, sicurezza, BIM, coordinamento: tutto in capo a un unico soggetto. Per voi significa meno gare, meno interfacce, meno rischi di incompatibilità tra elaborati.</div>
+      <div class="perche-corner"></div>
+    </div>
+    <div class="perche-card">
+      <div class="perche-n">02</div>
+      <div class="perche-title">Velocità strutturale, non promessa</div>
+      <div class="perche-body">I nostri workflow BIM integrati ci permettono di produrre documentazione completa e versionata in tempi che i piccoli studi non possono garantire. Cruciale per non perdere finanziamenti PNRR e regionali.</div>
+      <div class="perche-corner"></div>
+    </div>
+    <div class="perche-card">
+      <div class="perche-n">03</div>
+      <div class="perche-title">Esperienza in territori montani certificata</div>
+      <div class="perche-body">Il Ponte di Barcis (Dolomiti Friulane), il Palasport di Sappada, la Ciclovia del Garda: lavoriamo in montagna. Conosciamo le specificità tecniche, normative e logistiche del vostro territorio.</div>
+      <div class="perche-corner"></div>
+    </div>
+    <div class="perche-card">
+      <div class="perche-n">04</div>
+      <div class="perche-title">Sostenibilità come linguaggio nativo</div>
+      <div class="perche-body">Per le comunità montane la sostenibilità non è un optional — è identità. Il nostro approccio integra Envision, CAM e DNSH fin dalla prima fase di progetto, non come appendice burocratica.</div>
+      <div class="perche-corner"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. PROGETTI MONTAGNA ── -->
+<section id="progetti">
+  <div class="proj-head reveal">
+    <div>
+      <div class="sec-label" style="color:var(--mist)">04 — Portfolio</div>
+      <h2 class="proj-h2">Dove abbiamo<br>già <em>lavorato.</em></h2>
+    </div>
+    <a href="https://meg.studio/progetti/" class="proj-link" target="_blank">Tutti i progetti →</a>
+  </div>
+  <div class="proj-grid reveal">
+    <!-- Featured -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#031C18,#0A3828)">
+        <svg class="proj-img-topo" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#4488AA" stroke-width="0.6">
+            <path d="M0,250 Q100,180 200,160 Q300,140 400,200"/>
+            <path d="M0,235 Q100,165 200,142 Q300,122 400,182"/>
+            <path d="M0,220 Q100,148 200,122 Q300,100 400,162"/>
+            <path d="M0,200 Q100,128 200,98 Q300,72 400,138"/>
+            <path d="M0,175 Q100,100 200,68 Q300,40 400,108"/>
+          </g>
+        </svg>
+        <span class="proj-img-label">Barcis — Dolomiti Friulane (PN)</span>
+      </div>
+      <div class="proj-body">
+        <span class="proj-tag">Infrastruttura · Zona Montana · FVG</span>
+        <div class="proj-name">Ponte sul Lago di Barcis</div>
+        <div class="proj-desc">Progettazione strutturale e architettonica del nuovo ponte pedonale sul lago di Barcis, nel cuore delle Dolomiti Friulane. Connessione tra territorio e turismo sostenibile.</div>
+        <div class="proj-meta">
+          <span class="proj-pill">Strutture</span>
+          <span class="proj-pill">BIM</span>
+          <span class="proj-pill">Dolomiti FVG</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#031808,#0A3015)">
+        <svg class="proj-img-topo" viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#44AA66" stroke-width="0.6">
+            <ellipse cx="150" cy="130" rx="140" ry="55"/>
+            <ellipse cx="150" cy="118" rx="115" ry="43"/>
+            <ellipse cx="150" cy="106" rx="90" ry="32"/>
+            <ellipse cx="150" cy="94" rx="68" ry="22"/>
+            <ellipse cx="150" cy="82" rx="48" ry="14"/>
+            <ellipse cx="150" cy="72" rx="30" ry="8"/>
+          </g>
+        </svg>
+        <span class="proj-img-label">Sappada (BL)</span>
+      </div>
+      <div class="proj-body">
+        <span class="proj-tag">Sport · Zona Montana · Veneto</span>
+        <div class="proj-name">Nuovo Palasport a Sappada</div>
+        <div class="proj-desc">Progettazione del palasport in uno dei comuni montani dolomitici più iconici, con attenzione all'integrazione paesaggistica e all'efficienza energetica in clima alpino.</div>
+        <div class="proj-meta">
+          <span class="proj-pill">nZEB</span>
+          <span class="proj-pill">Paesaggio</span>
+          <span class="proj-pill">Dolomiti BL</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#101808,#1E3010)">
+        <svg class="proj-img-topo" viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#AA8844" stroke-width="0.6">
+            <path d="M0,180 Q75,140 150,120 Q225,100 300,140"/>
+            <path d="M0,160 Q75,118 150,98 Q225,78 300,118"/>
+            <path d="M0,138 Q75,94 150,72 Q225,50 300,92"/>
+            <path d="M0,112 Q75,66 150,42 Q225,18 300,62"/>
+          </g>
+        </svg>
+        <span class="proj-img-label">Tratto Veneto — Lago di Garda</span>
+      </div>
+      <div class="proj-body">
+        <span class="proj-tag">Infrastruttura · Mobilità dolce · Veneto</span>
+        <div class="proj-name">Ciclovia del Garda — Tratto Veneto</div>
+        <div class="proj-desc">Progettazione del tratto veneto della ciclovia del Garda, con interventi su aree di pregio paesaggistico e coordinamento con enti locali e parco naturale.</div>
+        <div class="proj-meta">
+          <span class="proj-pill">Mobilità</span>
+          <span class="proj-pill">CAM</span>
+          <span class="proj-pill">Turismo Lento</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. SERVIZI ── -->
+<section id="servizi">
+  <div class="serv-top reveal">
+    <div>
+      <div class="sec-label">05 — I nostri servizi</div>
+      <h2 class="serv-h2">Cosa facciamo<br>per <em>voi.</em></h2>
+    </div>
+    <p class="serv-lead">
+      Dalla fattibilità tecnico-economica alla direzione lavori, dalla modellazione BIM alla certificazione di sostenibilità. Ogni servizio è pensato per rispondere alle esigenze specifiche di una stazione appaltante pubblica che opera in territorio montano.
+    </p>
+  </div>
+  <div class="serv-grid reveal">
+    <div class="serv-cell">
+      <span class="serv-icon">🏛</span>
+      <div class="serv-title">Progettazione architettonica</div>
+      <div class="serv-body">PFTE, definitivo, esecutivo. Edifici pubblici, scuole, centri sociali, rifugi, strutture sportive, recupero del patrimonio storico.</div>
+      <div class="serv-tags">
+        <span class="serv-tag-item">→ D.Lgs. 36/2023</span>
+        <span class="serv-tag-item">→ Recupero edilizio</span>
+      </div>
+    </div>
+    <div class="serv-cell">
+      <span class="serv-icon">🔩</span>
+      <div class="serv-title">Ingegneria civile</div>
+      <div class="serv-body">Strade, ponti, piste ciclabili, opere idrauliche, consolidamenti. Esperienza in territori con criticità geotecniche e sismiche.</div>
+      <div class="serv-tags">
+        <span class="serv-tag-item">→ Strutture</span>
+        <span class="serv-tag-item">→ Infrastrutture</span>
+      </div>
+    </div>
+    <div class="serv-cell">
+      <span class="serv-icon">📐</span>
+      <div class="serv-title">BIM & Digitalizzazione</div>
+      <div class="serv-body">BIM Manager certificato, modelli Revit e Sierrasoft Roads. Gestione informativa conforme ai requisiti del nuovo codice appalti e PNRR.</div>
+      <div class="serv-tags">
+        <span class="serv-tag-item">→ LOD 300-400</span>
+        <span class="serv-tag-item">→ Clash detection</span>
+      </div>
+    </div>
+    <div class="serv-cell">
+      <span class="serv-icon">🌿</span>
+      <div class="serv-title">Sostenibilità</div>
+      <div class="serv-body">Rating Envision per infrastrutture, nZEB per edifici, CAM integrati, verifica DNSH per finanziamenti europei. Certificazione dell'opera.</div>
+      <div class="serv-tags">
+        <span class="serv-tag-item">→ Green Community</span>
+        <span class="serv-tag-item">→ PNRR compliance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. LA MONTAGNA CHE COSTRUISCE ── -->
+<section id="montagna" style="min-height:auto;padding:120px 64px">
+  <svg class="mtn-topo" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#8899BB" stroke-width="1">
+      <path d="M0,380 Q180,300 360,260 Q540,220 720,180 Q900,140 1080,200 Q1260,260 1440,300 L1440,400 L0,400Z" opacity="0.4"/>
+      <path d="M0,360 Q180,275 360,230 Q540,185 720,145 Q900,105 1080,165 Q1260,225 1440,270"/>
+      <path d="M0,340 Q180,250 360,200 Q540,150 720,110 Q900,70 1080,130 Q1260,190 1440,240"/>
+      <path d="M0,315 Q180,220 360,165 Q540,110 720,68 Q900,28 1080,88 Q1260,148 1440,205"/>
+      <path d="M0,285 Q180,185 360,125 Q540,65 720,24 Q900,-16 1080,44 Q1260,104 1440,165"/>
+    </g>
+  </svg>
+  <div class="mtn-content reveal">
+    <h2 class="mtn-h2">
+      La montagna non<br>aspetta.<br><em>Neanche noi.</em>
+    </h2>
+    <p class="mtn-body">
+      Conosciamo le urgenze dei comuni e delle unioni montane: fondi che scadono, edifici che invecchiano, infrastrutture che attendono da anni. meg.studio è strutturato per rispondere in modo professionale, rapido e completo — senza che voi dobbiate coordinare dieci studi diversi.
+    </p>
+    <div class="mtn-pills">
+      <span class="mtn-pill">Friuli Venezia Giulia</span>
+      <span class="mtn-pill">Veneto</span>
+      <span class="mtn-pill">Lombardia</span>
+      <span class="mtn-pill">Emilia Romagna</span>
+      <span class="mtn-pill">Zone PNRR Green Community</span>
+      <span class="mtn-pill">Aree interne</span>
+    </div>
+    <div class="mtn-grid">
+      <div class="mtn-card">
+        <div class="mtn-card-n">58</div>
+        <div class="mtn-card-l"><strong>Stazioni appaltanti</strong> montane nelle 4 regioni — tutte potenziali partner di meg.studio</div>
+      </div>
+      <div class="mtn-card">
+        <div class="mtn-card-n">1</div>
+        <div class="mtn-card-l"><strong>Unico interlocutore</strong> per architettura, ingegneria, BIM, sostenibilità e sicurezza</div>
+      </div>
+      <div class="mtn-card">
+        <div class="mtn-card-n">100%</div>
+        <div class="mtn-card-l"><strong>Compliance D.Lgs. 36/2023</strong> e requisiti BIM per appalti pubblici sopra soglia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 8. CTA ── -->
+<section id="cta" style="min-height:auto">
+  <svg class="cta-bg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#fff" stroke-width="0.8">
+      <ellipse cx="400" cy="350" rx="380" ry="150"/>
+      <ellipse cx="400" cy="330" rx="340" ry="128"/>
+      <ellipse cx="400" cy="308" rx="298" ry="108"/>
+      <ellipse cx="400" cy="285" rx="255" ry="88"/>
+      <ellipse cx="400" cy="260" rx="210" ry="70"/>
+      <ellipse cx="400" cy="233" rx="165" ry="53"/>
+      <ellipse cx="400" cy="205" rx="122" ry="38"/>
+      <ellipse cx="400" cy="178" rx="82" ry="24"/>
+      <ellipse cx="400" cy="155" rx="48" ry="13"/>
+    </g>
+  </svg>
+  <div class="cta-content reveal">
+    <h2 class="cta-h2">
+      Iniziamo a<br>progettare<br><em>insieme.</em>
+    </h2>
+    <p class="cta-body">
+      Siamo disponibili per un primo confronto senza impegno. Raccontateci il vostro territorio, il vostro fabbisogno progettuale, le scadenze che avete davanti. Troveremo il modo migliore per collaborare.
+    </p>
+  </div>
+  <div class="cta-right reveal">
+    <div class="cta-card">
+      <div class="cta-card-label">Contatti diretti — meg.studio srl</div>
+      <div class="cta-contact-row">
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">🌐</div>
+          <div>
+            <div class="cta-contact-label">Web</div>
+            <div class="cta-contact-val">meg.studio</div>
+          </div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">✉️</div>
+          <div>
+            <div class="cta-contact-label">Email</div>
+            <div class="cta-contact-val">info@meg.studio</div>
+          </div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">📞</div>
+          <div>
+            <div class="cta-contact-label">Telefono</div>
+            <div class="cta-contact-val">+39 049 744 1430</div>
+          </div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">📍</div>
+          <div>
+            <div class="cta-contact-label">Sede</div>
+            <div class="cta-contact-val">Via Roma 55, Noventa Padovana (PD)</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://meg.studio/contatti/" class="cta-btn" target="_blank">
+        Scrivici sul sito →
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">meg<span>.</span>studio — Progettiamo opportunità, creiamo valore</div>
+  <div class="footer-text">Presentazione per stazioni appaltanti montane · maggio 2026</div>
+  <a href="https://meg.studio" class="footer-site" target="_blank">meg.studio →</a>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Stagger children if needed
+      const children = e.target.querySelectorAll('.problema-card, .perche-card, .proj-card, .serv-cell, .mtn-card');
+      children.forEach((c, i) => {
+        c.style.transitionDelay = (i * 80) + 'ms';
+        c.classList.add('reveal', 'visible');
+      });
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Nav shrink on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.padding = window.scrollY > 60 ? '14px 48px' : '20px 48px';
+});
+</script>
+</body>
+</html>
