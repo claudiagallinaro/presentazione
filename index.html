@@ -407,11 +407,15 @@ section { min-height: 100vh; padding: 0; }
 #montagna {
   background: linear-gradient(180deg, var(--slate) 0%, var(--ink) 100%);
   padding: 120px 64px;
-  position: relative; overflow: hidden;
+  position: relative;
 }
 .mtn-topo {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 60%; opacity: 0.06; pointer-events: none;
+  display: block; width: 100%; opacity: 0.15; pointer-events: none;
+}
+.mtn-topo-separator {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 64px;
+  padding-top: 40px;
 }
 .mtn-content { position: relative; z-index: 2; }
 .mtn-h2 {
@@ -461,13 +465,7 @@ section { min-height: 100vh; padding: 0; }
   position: relative; overflow: hidden;
 }
 .cta-bg {
-  display: block; width: 100%; max-height: 180px; opacity: 0.25; pointer-events: none;
-}
-.cta-blob-separator {
-  grid-column: 1 / -1;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding-top: 48px;
-  margin-top: 16px;
+  position: absolute; inset: 0; opacity: 0.08; pointer-events: none;
 }
 .cta-content { position: relative; z-index: 2; }
 .cta-h2 {
@@ -891,15 +889,6 @@ footer {
 
 <!--7. LA MONTAGNA CHE COSTRUISCE-->
 <section id="montagna" style="min-height:auto;padding:120px 64px">
-  <svg class="mtn-topo" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#8899BB" stroke-width="1">
-      <path d="M0,380 Q180,300 360,260 Q540,220 720,180 Q900,140 1080,200 Q1260,260 1440,300 L1440,400 L0,400Z" opacity="0.4"/>
-      <path d="M0,360 Q180,275 360,230 Q540,185 720,145 Q900,105 1080,165 Q1260,225 1440,270"/>
-      <path d="M0,340 Q180,250 360,200 Q540,150 720,110 Q900,70 1080,130 Q1260,190 1440,240"/>
-      <path d="M0,315 Q180,220 360,165 Q540,110 720,68 Q900,28 1080,88 Q1260,148 1440,205"/>
-      <path d="M0,285 Q180,185 360,125 Q540,65 720,24 Q900,-16 1080,44 Q1260,104 1440,165"/>
-    </g>
-  </svg>
   <div class="mtn-content reveal">
     <h2 class="mtn-h2">
       La montagna non<br>aspetta.<br><em>Neanche noi.</em>
@@ -920,10 +909,34 @@ footer {
       </div>
     </div>
   </div>
+  <div class="mtn-topo-separator">
+    <svg class="mtn-topo" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#8899BB" stroke-width="1">
+      <path d="M0,380 Q180,300 360,260 Q540,220 720,180 Q900,140 1080,200 Q1260,260 1440,300 L1440,400 L0,400Z" opacity="0.4"/>
+      <path d="M0,360 Q180,275 360,230 Q540,185 720,145 Q900,105 1080,165 Q1260,225 1440,270"/>
+      <path d="M0,340 Q180,250 360,200 Q540,150 720,110 Q900,70 1080,130 Q1260,190 1440,240"/>
+      <path d="M0,315 Q180,220 360,165 Q540,110 720,68 Q900,28 1080,88 Q1260,148 1440,205"/>
+      <path d="M0,285 Q180,185 360,125 Q540,65 720,24 Q900,-16 1080,44 Q1260,104 1440,165"/>
+    </g>
+  </svg>
+  </div>
 </section>
 
 <!--8. CTA-->
 <section id="cta" style="min-height:auto">
+  <svg class="cta-bg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#fff" stroke-width="0.8">
+      <ellipse cx="400" cy="350" rx="380" ry="150"/>
+      <ellipse cx="400" cy="330" rx="340" ry="128"/>
+      <ellipse cx="400" cy="308" rx="298" ry="108"/>
+      <ellipse cx="400" cy="285" rx="255" ry="88"/>
+      <ellipse cx="400" cy="260" rx="210" ry="70"/>
+      <ellipse cx="400" cy="233" rx="165" ry="53"/>
+      <ellipse cx="400" cy="205" rx="122" ry="38"/>
+      <ellipse cx="400" cy="178" rx="82" ry="24"/>
+      <ellipse cx="400" cy="155" rx="48" ry="13"/>
+    </g>
+  </svg>
   <div class="cta-content reveal">
     <h2 class="cta-h2">
       Iniziamo a<br>progettare<br><em>insieme.</em>
@@ -969,21 +982,6 @@ footer {
         Scrivici sul sito →
       </a>
     </div>
-  </div>
-  <div class="cta-blob-separator">
-    <svg class="cta-bg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#fff" stroke-width="0.8">
-        <ellipse cx="400" cy="350" rx="380" ry="150"/>
-        <ellipse cx="400" cy="330" rx="340" ry="128"/>
-        <ellipse cx="400" cy="308" rx="298" ry="108"/>
-        <ellipse cx="400" cy="285" rx="255" ry="88"/>
-        <ellipse cx="400" cy="260" rx="210" ry="70"/>
-        <ellipse cx="400" cy="233" rx="165" ry="53"/>
-        <ellipse cx="400" cy="205" rx="122" ry="38"/>
-        <ellipse cx="400" cy="178" rx="82" ry="24"/>
-        <ellipse cx="400" cy="155" rx="48" ry="13"/>
-      </g>
-    </svg>
   </div>
 </section>
 
