@@ -380,25 +380,27 @@ section { min-height: 100vh; padding: 0; }
   font-size: 16px; font-weight: 300; color: #2A4840; line-height: 1.75;
 }
 .serv-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-  background: var(--stone-light);
-  border: 1px solid var(--stone-light);
-  border-radius: 12px; overflow: hidden;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  background: #e8eef4;
+  border: 1px solid #d4dde8;
+  border-radius: 16px; overflow: hidden;
 }
 .serv-cell {
-  background: #fff; padding: 32px 24px;
+  background: #fff; padding: 36px 28px;
   transition: background .2s;
+  border-right: 1px solid #d4dde8;
 }
-.serv-cell:hover { background: var(--ottanio-light); }
+.serv-cell:last-child { border-right: none; }
+.serv-cell:hover { background: rgba(174, 199, 249, 0.15); }
 .serv-icon {
-  font-size: 28px; margin-bottom: 16px; display: block;
+  font-size: 36px; margin-bottom: 20px; display: block;
 }
-.serv-title { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
-.serv-body { font-size: 13px; color: var(--mist); line-height: 1.6; }
-.serv-tags { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.serv-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--ink); }
+.serv-body { font-size: 13px; color: #2A4840; line-height: 1.7; margin-bottom: 4px; }
+.serv-tags { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
 .serv-tag-item {
-  font-family: 'DM Mono', monospace; font-size: 10px;
-  color: var(--ottanio); letter-spacing: 0.06em;
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--ottanio); letter-spacing: 0.04em;
 }
 
 /*7. PERCHÉ LA MONTAGNA*/
@@ -847,7 +849,6 @@ footer {
     </p>
   </div>
   <div class="serv-grid reveal">
-    </div>
     <div class="serv-cell">
       <span class="serv-icon">📐</span>
       <div class="serv-title">Concept e stime iniziali</div>
@@ -855,7 +856,8 @@ footer {
       <div class="serv-tags">
         <span class="serv-tag-item">→ Masterplan</span>
         <span class="serv-tag-item">→ Render, video</span>
-      </div>   
+      </div>
+    </div>
     <div class="serv-cell">
       <span class="serv-icon">🏛</span>
       <div class="serv-title">Progettazione architettonica</div>
