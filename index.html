@@ -461,7 +461,13 @@ section { min-height: 100vh; padding: 0; }
   position: relative; overflow: hidden;
 }
 .cta-bg {
-  position: absolute; inset: 0; opacity: 0.08; pointer-events: none;
+  display: block; width: 100%; max-height: 180px; opacity: 0.25; pointer-events: none;
+}
+.cta-blob-separator {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 48px;
+  margin-top: 16px;
 }
 .cta-content { position: relative; z-index: 2; }
 .cta-h2 {
@@ -918,19 +924,6 @@ footer {
 
 <!--8. CTA-->
 <section id="cta" style="min-height:auto">
-  <svg class="cta-bg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#fff" stroke-width="0.8">
-      <ellipse cx="400" cy="350" rx="380" ry="150"/>
-      <ellipse cx="400" cy="330" rx="340" ry="128"/>
-      <ellipse cx="400" cy="308" rx="298" ry="108"/>
-      <ellipse cx="400" cy="285" rx="255" ry="88"/>
-      <ellipse cx="400" cy="260" rx="210" ry="70"/>
-      <ellipse cx="400" cy="233" rx="165" ry="53"/>
-      <ellipse cx="400" cy="205" rx="122" ry="38"/>
-      <ellipse cx="400" cy="178" rx="82" ry="24"/>
-      <ellipse cx="400" cy="155" rx="48" ry="13"/>
-    </g>
-  </svg>
   <div class="cta-content reveal">
     <h2 class="cta-h2">
       Iniziamo a<br>progettare<br><em>insieme.</em>
@@ -976,6 +969,21 @@ footer {
         Scrivici sul sito →
       </a>
     </div>
+  </div>
+  <div class="cta-blob-separator">
+    <svg class="cta-bg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#fff" stroke-width="0.8">
+        <ellipse cx="400" cy="350" rx="380" ry="150"/>
+        <ellipse cx="400" cy="330" rx="340" ry="128"/>
+        <ellipse cx="400" cy="308" rx="298" ry="108"/>
+        <ellipse cx="400" cy="285" rx="255" ry="88"/>
+        <ellipse cx="400" cy="260" rx="210" ry="70"/>
+        <ellipse cx="400" cy="233" rx="165" ry="53"/>
+        <ellipse cx="400" cy="205" rx="122" ry="38"/>
+        <ellipse cx="400" cy="178" rx="82" ry="24"/>
+        <ellipse cx="400" cy="155" rx="48" ry="13"/>
+      </g>
+    </svg>
   </div>
 </section>
 
