@@ -111,11 +111,19 @@ section { min-height: 100vh; padding: 0; }
   display: flex; align-items: center; gap: 8px;
 }
 .hero-right {
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
 }
+  
 .topo-svg {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  opacity: 0.18;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+  pointer-events: none;
+  preserveAspectRatio: none;
 }
 .hero-right-content {
   position: relative; z-index: 2;
@@ -583,46 +591,27 @@ footer {
     </div>
   </div>
   <div class="hero-right">
-    <!-- Topographic lines SVG -->
-    <svg class="topo-svg" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#8899AA" stroke-width="0.8">
-        <ellipse cx="300" cy="500" rx="550" ry="180"/>
-        <ellipse cx="300" cy="490" rx="510" ry="160"/>
-        <ellipse cx="300" cy="480" rx="470" ry="140"/>
-        <ellipse cx="300" cy="468" rx="430" ry="122"/>
-        <ellipse cx="300" cy="455" rx="390" ry="105"/>
-        <ellipse cx="300" cy="442" rx="350" ry="90"/>
-        <ellipse cx="300" cy="428" rx="310" ry="76"/>
-        <ellipse cx="300" cy="413" rx="270" ry="63"/>
-        <ellipse cx="300" cy="398" rx="230" ry="52"/>
-        <ellipse cx="300" cy="382" rx="192" ry="42"/>
-        <ellipse cx="300" cy="365" rx="155" ry="33"/>
-        <ellipse cx="300" cy="348" rx="120" ry="25"/>
-        <ellipse cx="300" cy="330" rx="88" ry="18"/>
-        <ellipse cx="300" cy="314" rx="60" ry="12"/>
-        <ellipse cx="300" cy="300" rx="36" ry="7"/>
-        <ellipse cx="300" cy="290" rx="16" ry="3"/>
-        <!-- second peak -->
-        <ellipse cx="80" cy="620" rx="160" ry="60"/>
-        <ellipse cx="80" cy="612" rx="135" ry="50"/>
-        <ellipse cx="80" cy="604" rx="112" ry="40"/>
-        <ellipse cx="80" cy="596" rx="90" ry="31"/>
-        <ellipse cx="80" cy="588" rx="70" ry="23"/>
-        <ellipse cx="80" cy="580" rx="52" ry="16"/>
-        <ellipse cx="80" cy="574" rx="36" ry="10"/>
-        <!-- third peak -->
-        <ellipse cx="520" cy="680" rx="140" ry="55"/>
-        <ellipse cx="520" cy="672" rx="115" ry="44"/>
-        <ellipse cx="520" cy="664" rx="92" ry="34"/>
-        <ellipse cx="520" cy="656" rx="70" ry="25"/>
-        <ellipse cx="520" cy="648" rx="50" ry="17"/>
-        <ellipse cx="520" cy="642" rx="32" ry="10"/>
-      </g>
-      <!-- Altitude markers -->
-      <text x="295" y="282" fill="#6680A0" font-family="monospace" font-size="7" text-anchor="middle">2847 m</text>
-      <text x="78" y="568" fill="#6680A0" font-family="monospace" font-size="6" text-anchor="middle">1920 m</text>
-      <text x="518" y="636" fill="#6680A0" font-family="monospace" font-size="6" text-anchor="middle">2104 m</text>
-    </svg>
+    <svg class="topo-svg" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+  <!-- Strato 5 - montagne più lontane (più chiare) -->
+  <path d="M0,320 C80,300 160,260 240,240 C320,220 380,200 440,180 C500,160 560,150 620,170 C680,190 740,220 800,210 C860,200 920,180 980,200 C1040,220 1100,250 1160,260 L1200,270 L1200,600 L0,600 Z"
+        fill="#AEC7F9" opacity="0.45"/>
+
+  <!-- Strato 4 -->
+  <path d="M0,380 C70,360 140,330 220,310 C300,290 360,260 430,250 C500,240 560,260 630,280 C700,300 760,290 830,270 C900,250 960,270 1030,290 C1100,310 1160,330 1200,340 L1200,600 L0,600 Z"
+        fill="#7AA3D9" opacity="0.55"/>
+
+  <!-- Strato 3 - picco centrale -->
+  <path d="M0,440 C80,420 160,400 240,380 C320,360 400,340 480,310 C540,290 580,260 620,240 C660,260 700,290 760,320 C820,350 880,370 940,380 C1010,395 1080,400 1140,410 L1200,415 L1200,600 L0,600 Z"
+        fill="#5A8AC4" opacity="0.7"/>
+
+  <!-- Strato 2 -->
+  <path d="M0,490 C70,470 150,460 230,450 C310,440 380,430 450,420 C520,410 590,420 660,440 C730,460 800,470 870,460 C940,450 1010,440 1080,450 C1140,460 1180,470 1200,475 L1200,600 L0,600 Z"
+        fill="#3D6CA8" opacity="0.8"/>
+
+  <!-- Strato 1 - primo piano (più scuro) -->
+  <path d="M0,540 C90,520 180,510 270,515 C360,520 440,530 520,540 C600,550 680,545 760,535 C840,525 920,520 1000,525 C1080,530 1150,540 1200,545 L1200,600 L0,600 Z"
+        fill="#1F4575" opacity="0.9"/>
+</svg>
     <div class="hero-right-content">
       <div class="hero-stats">
         <div class="stat-box">
