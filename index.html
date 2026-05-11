@@ -121,8 +121,9 @@ section { min-height: 100vh; padding: 0; }
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.18;
+  opacity: 1;
   pointer-events: none;
+  z-index: 0;
 }
 .hero-right-content {
   position: relative; z-index: 2;
@@ -589,28 +590,29 @@ footer {
       <a href="#problema" class="hero-btn">Scopri il nostro approccio</a>
     </div>
   </div>
+  <svg class="topo-svg" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+    <!-- Strato 5 - più chiaro, sfondo -->
+    <path d="M -50,520 L 280,180 Q 295,165 310,180 L 560,440 L 880,200 Q 895,185 910,200 L 1160,460 L 1360,300 Q 1375,288 1390,300 L 1650,420 L 1650,900 L -50,900 Z"
+          fill="#AEC7F9" opacity="0.28"/>
+
+    <!-- Strato 4 - picco secondario -->
+    <path d="M -50,650 L 120,420 Q 135,405 150,420 L 340,640 L 580,460 Q 595,448 610,460 L 820,680 L 1080,500 Q 1095,488 1110,500 L 1340,720 L 1500,580 L 1650,620 L 1650,900 L -50,900 Z"
+          fill="#7AA3D9" opacity="0.32"/>
+
+    <!-- Strato 3 - picco centrale (più alto) -->
+    <path d="M -50,720 L 180,500 Q 195,485 210,500 L 420,260 Q 435,245 450,260 L 660,540 Q 675,528 690,540 L 920,360 Q 935,345 950,360 L 1180,600 L 1400,440 Q 1415,428 1430,440 L 1650,640 L 1650,900 L -50,900 Z"
+          fill="#5A8AC4" opacity="0.42"/>
+
+    <!-- Strato 2 - intermedio -->
+    <path d="M -50,780 L 100,640 Q 115,625 130,640 L 320,820 L 500,640 Q 515,625 530,640 L 720,800 L 940,660 Q 955,648 970,660 L 1180,820 L 1380,680 Q 1395,668 1410,680 L 1650,760 L 1650,900 L -50,900 Z"
+          fill="#3D6CA8" opacity="0.5"/>
+
+    <!-- Strato 1 - primo piano (più scuro) -->
+    <path d="M -50,830 L 150,740 Q 165,728 180,740 L 380,830 L 580,750 Q 595,738 610,750 L 800,820 L 1020,750 Q 1035,738 1050,750 L 1250,830 L 1450,770 Q 1465,758 1480,770 L 1650,820 L 1650,900 L -50,900 Z"
+          fill="#1F4575" opacity="0.6"/>
+  </svg>
   <div class="hero-right">
-   <svg class="topo-svg" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <!-- Strato 5 - più chiaro, sfondo (picco grande a destra) -->
-  <path d="M 50,520 L 280,180 Q 295,165 310,180 L 560,440 L 720,300 Q 735,288 750,300 L 850,400 L 850,900 L -50,900 L -50,560 Z"
-        fill="#AEC7F9" opacity="0.28"/>
-
-  <!-- Strato 4 - picco secondario sinistra -->
-  <path d="M -50,650 L 120,420 Q 135,405 150,420 L 340,640 L 480,500 Q 495,488 510,500 L 700,700 L 850,580 L 850,900 L -50,900 Z"
-        fill="#7AA3D9" opacity="0.32"/>
-
-  <!-- Strato 3 - picco centrale (più alto) -->
-  <path d="M -50,720 L 180,500 Q 195,485 210,500 L 420,260 Q 435,245 450,260 L 660,540 Q 675,528 690,540 L 850,680 L 850,900 L -50,900 Z"
-        fill="#5A8AC4" opacity="0.42"/>
-
-  <!-- Strato 2 - intermedio -->
-  <path d="M -50,780 L 100,640 Q 115,625 130,640 L 320,820 L 500,640 Q 515,625 530,640 L 720,800 L 850,720 L 850,900 L -50,900 Z"
-        fill="#3D6CA8" opacity="0.5"/>
-
-  <!-- Strato 1 - primo piano (più scuro) -->
-  <path d="M -50,830 L 150,740 Q 165,728 180,740 L 380,830 L 580,750 Q 595,738 610,750 L 800,820 L 850,800 L 850,900 L -50,900 Z"
-        fill="#1F4575" opacity="0.6"/>
-</svg>
+    <div class="hero-right-content">
     <div class="hero-right-content">
       <div class="hero-stats">
         <div class="stat-box">
