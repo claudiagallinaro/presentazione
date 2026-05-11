@@ -121,9 +121,8 @@ section { min-height: 100vh; padding: 0; }
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.55;
+  opacity: 1;
   pointer-events: none;
-  preserveAspectRatio: none;
 }
 .hero-right-content {
   position: relative; z-index: 2;
@@ -591,26 +590,26 @@ footer {
     </div>
   </div>
   <div class="hero-right">
-    <svg class="topo-svg" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
-  <!-- Strato 5 - montagne più lontane (più chiare) -->
-  <path d="M0,320 C80,300 160,260 240,240 C320,220 380,200 440,180 C500,160 560,150 620,170 C680,190 740,220 800,210 C860,200 920,180 980,200 C1040,220 1100,250 1160,260 L1200,270 L1200,600 L0,600 Z"
-        fill="#AEC7F9" opacity="0.45"/>
+   <svg class="topo-svg" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <!-- Strato 5 - più chiaro, sfondo (picco grande a destra) -->
+  <path d="M 50,520 L 280,180 Q 295,165 310,180 L 560,440 L 720,300 Q 735,288 750,300 L 850,400 L 850,900 L -50,900 L -50,560 Z"
+        fill="#AEC7F9" opacity="0.28"/>
 
-  <!-- Strato 4 -->
-  <path d="M0,380 C70,360 140,330 220,310 C300,290 360,260 430,250 C500,240 560,260 630,280 C700,300 760,290 830,270 C900,250 960,270 1030,290 C1100,310 1160,330 1200,340 L1200,600 L0,600 Z"
-        fill="#7AA3D9" opacity="0.55"/>
+  <!-- Strato 4 - picco secondario sinistra -->
+  <path d="M -50,650 L 120,420 Q 135,405 150,420 L 340,640 L 480,500 Q 495,488 510,500 L 700,700 L 850,580 L 850,900 L -50,900 Z"
+        fill="#7AA3D9" opacity="0.32"/>
 
-  <!-- Strato 3 - picco centrale -->
-  <path d="M0,440 C80,420 160,400 240,380 C320,360 400,340 480,310 C540,290 580,260 620,240 C660,260 700,290 760,320 C820,350 880,370 940,380 C1010,395 1080,400 1140,410 L1200,415 L1200,600 L0,600 Z"
-        fill="#5A8AC4" opacity="0.7"/>
+  <!-- Strato 3 - picco centrale (più alto) -->
+  <path d="M -50,720 L 180,500 Q 195,485 210,500 L 420,260 Q 435,245 450,260 L 660,540 Q 675,528 690,540 L 850,680 L 850,900 L -50,900 Z"
+        fill="#5A8AC4" opacity="0.42"/>
 
-  <!-- Strato 2 -->
-  <path d="M0,490 C70,470 150,460 230,450 C310,440 380,430 450,420 C520,410 590,420 660,440 C730,460 800,470 870,460 C940,450 1010,440 1080,450 C1140,460 1180,470 1200,475 L1200,600 L0,600 Z"
-        fill="#3D6CA8" opacity="0.8"/>
+  <!-- Strato 2 - intermedio -->
+  <path d="M -50,780 L 100,640 Q 115,625 130,640 L 320,820 L 500,640 Q 515,625 530,640 L 720,800 L 850,720 L 850,900 L -50,900 Z"
+        fill="#3D6CA8" opacity="0.5"/>
 
   <!-- Strato 1 - primo piano (più scuro) -->
-  <path d="M0,540 C90,520 180,510 270,515 C360,520 440,530 520,540 C600,550 680,545 760,535 C840,525 920,520 1000,525 C1080,530 1150,540 1200,545 L1200,600 L0,600 Z"
-        fill="#1F4575" opacity="0.9"/>
+  <path d="M -50,830 L 150,740 Q 165,728 180,740 L 380,830 L 580,750 Q 595,738 610,750 L 800,820 L 850,800 L 850,900 L -50,900 Z"
+        fill="#1F4575" opacity="0.6"/>
 </svg>
     <div class="hero-right-content">
       <div class="hero-stats">
