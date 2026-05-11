@@ -75,8 +75,11 @@ section { min-height: 100vh; padding: 0; }
 }
 .hero-left {
   padding: 140px 64px 80px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  position: relative; z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 .hero-tag {
   font-family: 'DM Mono', monospace; font-size: 11px;
@@ -118,7 +121,8 @@ section { min-height: 100vh; padding: 0; }
   
 .topo-svg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -576,6 +580,28 @@ footer {
 
 <!--1. HERO-->
 <section id="hero">
+  <svg class="topo-svg" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <!-- Strato 5 - più chiaro, sfondo -->
+    <path d="M -50,520 L 180,260 Q 195,245 210,260 L 420,460 L 620,220 Q 635,205 650,220 L 880,480 L 1080,280 Q 1095,265 1110,280 L 1340,500 L 1500,340 Q 1515,328 1530,340 L 1650,440 L 1650,950 L -50,950 Z"
+          fill="#AEC7F9" opacity="0.28"/>
+
+    <!-- Strato 4 -->
+    <path d="M -50,640 L 100,440 Q 115,425 130,440 L 320,620 L 520,440 Q 535,425 550,440 L 760,660 L 980,460 Q 995,445 1010,460 L 1220,680 L 1420,520 Q 1435,508 1450,520 L 1650,600 L 1650,950 L -50,950 Z"
+          fill="#7AA3D9" opacity="0.34"/>
+
+    <!-- Strato 3 - picchi più alti centrali -->
+    <path d="M -50,720 L 160,520 Q 175,505 190,520 L 380,280 Q 395,265 410,280 L 620,540 Q 635,528 650,540 L 860,340 Q 875,325 890,340 L 1100,580 L 1320,420 Q 1335,408 1350,420 L 1550,640 L 1650,600 L 1650,950 L -50,950 Z"
+          fill="#5A8AC4" opacity="0.42"/>
+
+    <!-- Strato 2 -->
+    <path d="M -50,780 L 80,640 Q 95,625 110,640 L 300,800 L 480,620 Q 495,608 510,620 L 700,780 L 900,640 Q 915,628 930,640 L 1140,800 L 1340,660 Q 1355,648 1370,660 L 1560,780 L 1650,740 L 1650,950 L -50,950 Z"
+          fill="#3D6CA8" opacity="0.5"/>
+
+    <!-- Strato 1 - primo piano (più scuro) -->
+    <path d="M -50,840 L 140,750 Q 155,738 170,750 L 360,830 L 560,750 Q 575,738 590,750 L 780,820 L 1000,740 Q 1015,728 1030,740 L 1230,820 L 1430,760 Q 1445,748 1460,760 L 1650,810 L 1650,950 L -50,950 Z"
+          fill="#1F4575" opacity="0.6"/>
+  </svg>
+
   <div class="hero-left">
     <div>
       <div class="hero-tag">Per le stazioni appaltanti montane</div>
@@ -583,36 +609,15 @@ footer {
         Progettiamo<br>la montagna<br>che vuole<br><em>crescere.</em>
       </h1>
       <p class="hero-sub">
-        Architettura e ingegneria integrate per le comunità e le unioni montane. Un solo interlocutore, un approccio a 360°.  
+        Architettura e ingegneria integrate per le comunità e le unioni montane. Un solo interlocutore, un approccio a 360°.  
       </p>
     </div>
     <div class="hero-bottom">
       <a href="#problema" class="hero-btn">Scopri il nostro approccio</a>
     </div>
   </div>
-  <svg class="topo-svg" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
-    <!-- Strato 5 - più chiaro, sfondo -->
-    <path d="M -50,520 L 280,180 Q 295,165 310,180 L 560,440 L 880,200 Q 895,185 910,200 L 1160,460 L 1360,300 Q 1375,288 1390,300 L 1650,420 L 1650,900 L -50,900 Z"
-          fill="#AEC7F9" opacity="0.28"/>
 
-    <!-- Strato 4 - picco secondario -->
-    <path d="M -50,650 L 120,420 Q 135,405 150,420 L 340,640 L 580,460 Q 595,448 610,460 L 820,680 L 1080,500 Q 1095,488 1110,500 L 1340,720 L 1500,580 L 1650,620 L 1650,900 L -50,900 Z"
-          fill="#7AA3D9" opacity="0.32"/>
-
-    <!-- Strato 3 - picco centrale (più alto) -->
-    <path d="M -50,720 L 180,500 Q 195,485 210,500 L 420,260 Q 435,245 450,260 L 660,540 Q 675,528 690,540 L 920,360 Q 935,345 950,360 L 1180,600 L 1400,440 Q 1415,428 1430,440 L 1650,640 L 1650,900 L -50,900 Z"
-          fill="#5A8AC4" opacity="0.42"/>
-
-    <!-- Strato 2 - intermedio -->
-    <path d="M -50,780 L 100,640 Q 115,625 130,640 L 320,820 L 500,640 Q 515,625 530,640 L 720,800 L 940,660 Q 955,648 970,660 L 1180,820 L 1380,680 Q 1395,668 1410,680 L 1650,760 L 1650,900 L -50,900 Z"
-          fill="#3D6CA8" opacity="0.5"/>
-
-    <!-- Strato 1 - primo piano (più scuro) -->
-    <path d="M -50,830 L 150,740 Q 165,728 180,740 L 380,830 L 580,750 Q 595,738 610,750 L 800,820 L 1020,750 Q 1035,738 1050,750 L 1250,830 L 1450,770 Q 1465,758 1480,770 L 1650,820 L 1650,900 L -50,900 Z"
-          fill="#1F4575" opacity="0.6"/>
-  </svg>
   <div class="hero-right">
-    <div class="hero-right-content">
     <div class="hero-right-content">
       <div class="hero-stats">
         <div class="stat-box">
