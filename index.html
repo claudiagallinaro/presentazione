@@ -583,17 +583,41 @@ footer {
     </div>
   </div>
   <div class="hero-right">
-    <!-- Mountain silhouette -->
-    <svg class="topo-svg" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
-      <!-- Silhouette concettuale: ampia, morbida, senza calotta nevosa -->
-      <path d="M0,700 C80,700 120,600 200,520 C260,460 300,480 360,360 C420,240 460,320 520,440 C580,560 620,500 700,560 C740,590 770,640 800,700 Z"
-            fill="#8899AA" fill-opacity="0.22" stroke="none"/>
-      <!-- Profilo morbido -->
-      <path d="M0,700 C80,700 120,600 200,520 C260,460 300,480 360,360 C420,240 460,320 520,440 C580,560 620,500 700,560 C740,590 770,640 800,700"
-            fill="none" stroke="#8899AA" stroke-width="1.2" opacity="0.5"/>
-      <!-- Secondo piano, ampio -->
-      <path d="M0,750 C100,720 160,650 240,590 C300,540 340,560 390,460 C440,360 480,400 550,490 C610,570 660,530 730,580 C765,600 785,650 800,700"
-            fill="none" stroke="#8899AA" stroke-width="0.6" opacity="0.28"/>
+    <svg class="topo-svg" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="fadeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#4A5568; stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#4A5568; stop-opacity:0.1" />
+            </linearGradient>
+        </defs>
+
+        <g fill="none" stroke="#4A5568" stroke-width="0.8" opacity="0.6">
+            <path d="M-50,350 Q150,50 300,300 T600,350" stroke-width="1.5" />
+            <path d="M-40,355 Q160,70 310,310 T610,355" />
+            <path d="M-30,360 Q170,90 320,320 T620,360" />
+            <path d="M-20,365 Q180,110 330,330 T630,365" />
+            <path d="M-10,370 Q190,130 340,340 T640,370" />
+            <path d="M0,375 Q200,150 350,350 T650,375" opacity="0.4" />
+        </g>
+
+        <g fill="none" stroke="#4A5568" stroke-width="0.8" opacity="0.7">
+            <path d="M250,400 Q500,100 750,400" stroke-width="1.8" />
+            <path d="M260,405 Q500,120 740,405" />
+            <path d="M270,410 Q500,140 730,410" />
+            <path d="M280,415 Q500,160 720,415" />
+            <path d="M290,420 Q500,180 710,420" />
+            <path d="M300,425 Q500,200 700,425" opacity="0.5" />
+        </g>
+
+        <g fill="none" stroke="#4A5568" stroke-width="0.8" opacity="0.5">
+            <path d="M600,380 Q850,50 1050,380" stroke-width="1.5" />
+            <path d="M610,385 Q850,75 1040,385" />
+            <path d="M620,390 Q850,100 1030,390" />
+            <path d="M630,395 Q850,125 1020,395" />
+            <path d="M640,400 Q850,150 1010,400" opacity="0.3" />
+        </g>
+
+        <path d="M0,350 C200,320 400,450 600,350 S800,300 1000,380" fill="none" stroke="#4A5568" stroke-width="0.5" opacity="0.2" />
     </svg>
     <div class="hero-right-content">
       <div class="hero-stats">
