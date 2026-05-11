@@ -522,6 +522,15 @@ section { min-height: 100vh; padding: 0; }
   text-transform: uppercase; margin-bottom: 2px;
 }
 .cta-contact-val { font-size: 14px; font-weight: 500; color: var(--ink); }
+a.cta-contact-val {
+  text-decoration: none;
+  transition: color .2s;
+  display: inline-block;
+}
+a.cta-contact-val:hover {
+  color: var(--ottanio);
+  text-decoration: underline;
+}
 .cta-btn {
   display: block; text-align: center;
   margin-top: 28px; padding: 16px;
@@ -943,37 +952,37 @@ footer {
   </div>
   <div class="cta-right reveal">
     <div class="cta-card">
-      <div class="cta-card-label">Contatti diretti - meg.studio srl</div>
-      <div class="cta-contact-row">
-        <div class="cta-contact-item">
-          <div class="cta-contact-icon">🌐</div>
-          <div>
-            <div class="cta-contact-label">Web</div>
-            <div class="cta-contact-val">meg.studio</div>
-          </div>
-        </div>
-        <div class="cta-contact-item">
-          <div class="cta-contact-icon">✉️</div>
-          <div>
-            <div class="cta-contact-label">Email</div>
-            <div class="cta-contact-val">progetti@meg.studio</div>
-          </div>
-        </div>
-        <div class="cta-contact-item">
-          <div class="cta-contact-icon">📞</div>
-          <div>
-            <div class="cta-contact-label">Telefono</div>
-            <div class="cta-contact-val">+39 049 744 1430</div>
-          </div>
-        </div>
-        <div class="cta-contact-item">
-          <div class="cta-contact-icon">📍</div>
-          <div>
-            <div class="cta-contact-label">Sede</div>
-            <div class="cta-contact-val">Via Roma 55, Noventa Padovana (PD)</div>
-          </div>
-        </div>
-      </div>
+     <div class="cta-card-label">Contatti diretti - meg.studio srl</div>
+<div class="cta-contact-row">
+  <div class="cta-contact-item">
+    <div class="cta-contact-icon">🌐</div>
+    <div>
+      <div class="cta-contact-label">Web</div>
+      <a href="https://meg.studio" target="_blank" rel="noopener" class="cta-contact-val">meg.studio</a>
+    </div>
+  </div>
+  <div class="cta-contact-item">
+    <div class="cta-contact-icon">✉️</div>
+    <div>
+      <div class="cta-contact-label">Email</div>
+      <a href="mailto:progetti@meg.studio" class="cta-contact-val">progetti@meg.studio</a>
+    </div>
+  </div>
+  <div class="cta-contact-item">
+    <div class="cta-contact-icon">📞</div>
+    <div>
+      <div class="cta-contact-label">Telefono</div>
+      <a href="tel:+390497441430" class="cta-contact-val">+39 049 744 1430</a>
+    </div>
+  </div>
+  <div class="cta-contact-item">
+    <div class="cta-contact-icon">📍</div>
+    <div>
+      <div class="cta-contact-label">Sede</div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Via+Roma+55,+Noventa+Padovana,+PD" target="_blank" rel="noopener" class="cta-contact-val">Via Roma 55, Noventa Padovana (PD)</a>
+    </div>
+  </div>
+</div>
       <a href="https://meg.studio/contatti/" class="cta-btn" target="_blank">
         Scrivici sul sito →
       </a>
