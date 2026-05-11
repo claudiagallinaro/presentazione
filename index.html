@@ -123,7 +123,7 @@ section { min-height: 100vh; padding: 0; }
   width: 100%; 
   height: auto;       
   min-height: 60%;   
-  opacity: 0.09;
+  opacity: 0.18;
 }
 .hero-right-content {
   position: relative;
@@ -560,16 +560,63 @@ footer {
 
 @media(max-width:900px){
   nav .nav-links { display: none; }
-  #hero, #problema, #chisiamo .cs-top, #servizi .serv-top, #cta { grid-template-columns: 1fr; }
-  section { padding: 80px 24px; }
-  .hero-left { padding: 100px 24px 60px; }
-  .hero-right-content { padding: 40px 24px; }
-  .perche-grid, .mtn-grid { grid-template-columns: 1fr; }
-  .proj-grid { grid-template-columns: 1fr; }
-  .serv-grid { grid-template-columns: 1fr 1fr; }
+  
+  #hero, #problema, #chisiamo .cs-top, #servizi .serv-top, #cta { 
+    display: flex; 
+    flex-direction: column; 
+    grid-template-columns: 1fr; 
+  }
+  
+  section { padding: 60px 24px; }
+  
+  /* HERO MOBILE */
+  #hero { height: auto; min-height: 100vh; }
+  
+  .hero-left { 
+    padding: 120px 24px 40px; 
+    flex: none; 
+  }
+  
+  .hero-right { 
+    position: relative; 
+    inset: auto; 
+    z-index: 10; 
+  }
+  
+  .hero-right-content { 
+    padding: 20px 24px 80px; 
+    align-items: flex-start; 
+    justify-content: flex-start;
+    pointer-events: auto;
+  }
+  
+  .hero-stats { 
+    width: 100%; 
+    max-width: 100%; 
+    flex-direction: row; /* Li mette uno accanto all'altro */
+    gap: 12px; 
+  }
+  
+  .stat-box { 
+    flex: 1; 
+    padding: 20px 16px; 
+  }
+  
+  .stat-n { font-size: 42px; } 
+
+  /* ALTRE SEZIONI */
+  .perche-grid, .mtn-grid, .proj-grid { grid-template-columns: 1fr; }
+  .serv-grid { grid-template-columns: 1fr; } 
+  
   nav { padding: 16px 24px; }
-  footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
-  #problema, #perche, #progetti, #servizi, #montagna, #cta { padding: 80px 24px; }
+  footer { 
+    padding: 32px 24px; 
+    flex-direction: column; 
+    gap: 16px; 
+    text-align: center; 
+  }
+  
+  #problema, #perche, #progetti, #servizi, #montagna, #cta { padding: 60px 24px; }
 }
 </style>
 </head>
