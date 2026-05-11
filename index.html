@@ -121,11 +121,11 @@ section { min-height: 100vh; padding: 0; }
   
 .topo-svg {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.18;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }
@@ -562,6 +562,7 @@ footer {
   nav { padding: 16px 24px; }
   footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
   #problema, #perche, #progetti, #servizi, #montagna, #cta { padding: 80px 24px; }
+  .topo-svg { height: 60%; top: auto; bottom: 0; }
 }
 </style>
 </head>
@@ -580,7 +581,7 @@ footer {
 
 <!--1. HERO-->
 <section id="hero">
-  <svg class="topo-svg" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <svg class="topo-svg" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
     <!-- Strato 5 - più chiaro, sfondo -->
     <path d="M -50,520 L 180,260 Q 195,245 210,260 L 420,460 L 620,220 Q 635,205 650,220 L 880,480 L 1080,280 Q 1095,265 1110,280 L 1340,500 L 1500,340 Q 1515,328 1530,340 L 1650,440 L 1650,950 L -50,950 Z"
           fill="#AEC7F9" opacity="0.28"/>
@@ -743,7 +744,7 @@ footer {
     <div class="perche-card">
       <div class="perche-n">03</div>
       <div class="perche-title">Esperienza in territori montani certificata</div>
-      <div class="perche-body">Il Ponte di Barcis (Dolomiti Friulane), il Palasport di Sappada, la Ciclovia del Garda, l'Area Sportiva di Ampezzo, la Ciclovia Alpe Adria, il Bike Hostel Zoncolan a Sutrio: lavoriamo in montagna. Conosciamo le specificità tecniche, normative e logistiche del vostro territorio.</div>
+      <div class="perche-body">Il Ponte di Barcis (Dolomiti Friulane), il Palasport di Sappada, la Ciclovia del Garda (Monte Baldo), l'Area Sportiva di Ampezzo, la Ciclovia Alpe Adria, il Bike Hostel Zoncolan a Sutrio: lavoriamo in montagna. Conosciamo le specificità tecniche, normative e logistiche del vostro territorio.</div>
       <div class="perche-corner"></div>
     </div>
     <div class="perche-card">
@@ -831,7 +832,7 @@ footer {
       </div>
       <div class="proj-body">
         <span class="proj-tag">Infrastruttura · Mobilità dolce · Veneto</span>
-        <div class="proj-name">Ciclovia del Garda - Tratto Veneto</div>
+        <div class="proj-name">Ciclovia del Garda - Monte Baldo</div>
         <div class="proj-desc">Progettazione del tratto veneto della ciclovia del Garda, con interventi su aree di pregio paesaggistico e coordinamento con enti locali e parco naturale.</div>
         <div class="proj-meta">
           <span class="proj-pill">Mobilità</span>
