@@ -583,45 +583,19 @@ footer {
     </div>
   </div>
   <div class="hero-right">
-    <!-- Topographic lines SVG -->
+    <!-- Mountain silhouette -->
     <svg class="topo-svg" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#8899AA" stroke-width="0.8">
-        <ellipse cx="300" cy="500" rx="550" ry="180"/>
-        <ellipse cx="300" cy="490" rx="510" ry="160"/>
-        <ellipse cx="300" cy="480" rx="470" ry="140"/>
-        <ellipse cx="300" cy="468" rx="430" ry="122"/>
-        <ellipse cx="300" cy="455" rx="390" ry="105"/>
-        <ellipse cx="300" cy="442" rx="350" ry="90"/>
-        <ellipse cx="300" cy="428" rx="310" ry="76"/>
-        <ellipse cx="300" cy="413" rx="270" ry="63"/>
-        <ellipse cx="300" cy="398" rx="230" ry="52"/>
-        <ellipse cx="300" cy="382" rx="192" ry="42"/>
-        <ellipse cx="300" cy="365" rx="155" ry="33"/>
-        <ellipse cx="300" cy="348" rx="120" ry="25"/>
-        <ellipse cx="300" cy="330" rx="88" ry="18"/>
-        <ellipse cx="300" cy="314" rx="60" ry="12"/>
-        <ellipse cx="300" cy="300" rx="36" ry="7"/>
-        <ellipse cx="300" cy="290" rx="16" ry="3"/>
-        <!-- second peak -->
-        <ellipse cx="80" cy="620" rx="160" ry="60"/>
-        <ellipse cx="80" cy="612" rx="135" ry="50"/>
-        <ellipse cx="80" cy="604" rx="112" ry="40"/>
-        <ellipse cx="80" cy="596" rx="90" ry="31"/>
-        <ellipse cx="80" cy="588" rx="70" ry="23"/>
-        <ellipse cx="80" cy="580" rx="52" ry="16"/>
-        <ellipse cx="80" cy="574" rx="36" ry="10"/>
-        <!-- third peak -->
-        <ellipse cx="520" cy="680" rx="140" ry="55"/>
-        <ellipse cx="520" cy="672" rx="115" ry="44"/>
-        <ellipse cx="520" cy="664" rx="92" ry="34"/>
-        <ellipse cx="520" cy="656" rx="70" ry="25"/>
-        <ellipse cx="520" cy="648" rx="50" ry="17"/>
-        <ellipse cx="520" cy="642" rx="32" ry="10"/>
-      </g>
-      <!-- Altitude markers -->
-      <text x="295" y="282" fill="#6680A0" font-family="monospace" font-size="7" text-anchor="middle">2847 m</text>
-      <text x="78" y="568" fill="#6680A0" font-family="monospace" font-size="6" text-anchor="middle">1920 m</text>
-      <text x="518" y="636" fill="#6680A0" font-family="monospace" font-size="6" text-anchor="middle">2104 m</text>
+      <!-- Main mountain (center, tallest) -->
+      <path d="M600,700 L480,420 L420,500 L350,340 L280,460 L220,380 L150,520 L80,440 L0,580 L0,700 Z"
+            fill="#8899AA" fill-opacity="0.25" stroke="#8899AA" stroke-width="1"/>
+      <!-- Snow cap on main peak -->
+      <path d="M350,340 L320,390 L380,390 Z"
+            fill="#AABBC8" fill-opacity="0.5" stroke="none"/>
+      <!-- Subtle ridge line -->
+      <path d="M0,700 L80,440 L150,520 L220,380 L280,460 L350,340 L420,500 L480,420 L600,700"
+            fill="none" stroke="#8899AA" stroke-width="0.8" opacity="0.6"/>
+      <path d="M0,700 L100,480 L180,560 L250,410 L310,500 L370,370 L440,530 L510,450 L600,700"
+            fill="none" stroke="#8899AA" stroke-width="0.5" opacity="0.35"/>
     </svg>
     <div class="hero-right-content">
       <div class="hero-stats">
